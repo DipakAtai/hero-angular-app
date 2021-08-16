@@ -1,0 +1,29 @@
+<h2 class="heading">Super Heroes</h2>
+<!-- <div class="hero__card">
+    <p class="heading">{{hero.name | uppercase}} Details</p>
+    <img src={{hero.imageUrl}} alt="profile-image" class="hero__profile-img">
+    <p class="hero__id">{{hero.id}}</p>
+    <h3 class="hero__name">{{hero.name}}</h3>
+</div>
+
+<div class="update__data-form">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="hero.name" id="name" placeholder=" Enter Hero Name...">
+    </div>
+    <div>
+        <label for="id">Id:</label>
+        <input type="number" [(ngModel)]="hero.id" id="id" placeholder=" Enter Hero Id...">
+    </div>
+</div> -->
+<div class="hero__card">
+    <div class="hero__card-item" *ngFor="let hero of heroes" (click)="onSelect(hero)">
+        <p class="heading">{{hero.name | uppercase}} Details</p>
+        <img src={{hero.imageUrl}} alt="profile-image" class="hero__profile-img">
+        <p class="hero__id">{{hero.id}}</p>
+        <h3 class="hero__name">{{hero.name}}</h3>
+    </div>
+</div>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

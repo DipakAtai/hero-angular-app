@@ -1,0 +1,69 @@
+h2.heading {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.hero__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .hero__card-item {
+        margin: 10px;
+        box-shadow: 2px 3px 5px 4px rgba(0, 0, 0, 0.6);
+        padding: 10px 40px;
+        text-align: center;
+        min-width: 240px;
+        p.heading {
+            text-decoration: underline;
+            color: blue;
+            font-weight: bold;
+        }
+        .hero__profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 1px solid rgb(200, 200, 200);
+        }
+        p.hero__id {
+            color: green;
+        }
+        h3.hero__name {
+            color: green;
+        }
+    }
+}
+
+.update__data-form {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    div {
+        margin: 10px;
+        input {
+            padding: 12px;
+        }
+    }
+}
+
+.select_hero__card-item {
+    width: 300px;
+    margin: auto;
+    box-shadow: 2px 3px 5px 4px rgba(0, 0, 0, 0.6);
+    padding: 10px 40px;
+    text-align: center;
+    min-width: 240px;
+    margin-top: 40px;
+    img {
+        width: 100px;
+    }
+    div {
+        margin: 10px;
+        input {
+            padding: 12px;
+        }
+    }
+}
