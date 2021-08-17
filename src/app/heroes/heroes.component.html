@@ -16,7 +16,19 @@
         <input type="number" [(ngModel)]="hero.id" id="id" placeholder=" Enter Hero Id...">
     </div>
 </div> -->
-<div class="hero__card">
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
+    </li>
+</ul>
+<!-- <ul class="heroes">
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul> -->
+<!-- <div class="hero__card">
     <div class="hero__card-item" *ngFor="let hero of heroes" (click)="onSelect(hero)">
         <p class="heading">{{hero.name | uppercase}} Details</p>
         <img src={{hero.imageUrl}} alt="profile-image" class="hero__profile-img">
@@ -26,4 +38,4 @@
 </div>
 
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

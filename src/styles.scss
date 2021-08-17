@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+// for second menu
+ul.heroes {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    li {
+        a {
+            text-decoration: none;
+            color: black;
+            background-color: #3f525c;
+            border-radius: 2px;
+            padding: 1rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            min-width: 70px;
+            margin: 0.5rem auto;
+            box-sizing: border-box;
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+            &:hover {
+                background-color: #000;
+            }
+        }
+    }
+}

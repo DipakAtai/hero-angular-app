@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,DoCheck } from '@angular/core';
 import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,17 +10,60 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-detail.component.scss']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnInit,DoCheck {
 
-  constructor() { }
+  constructor( 
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+    ) { 
+      this.getHero();
+      this.getHeroes();
 
-  ngOnInit(): void {
   }
+  heroes: Hero[] = [];
   @Input() hero ?: Hero; 
-
-  closeCard(){
+  ngOnInit(): void {
+    console.log(this.hero)
+    this.getHero();
+    this.getHeroes();
     
-    console.log("Close Button")
+  }
+  ngDoCheck(){
+    this.getHero();
+    this.getHeroes();
+  }
+  ngOnChanges():void{
+    console.log(this.hero)
+    this.getHero();
+    this.getHeroes();
+  }
+  getHero(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+      console.log("From getHero");
+    // this.heroService.getHeroes()
+    //   .subscribe(heroes => this.heroes = heroes);
+  }
+  onClicked(){
+    console.log(this.hero)
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
+    console.log("getHeroes")
+    console.log(this.heroes)
+  }
+
+
+  // closeCard(){
+    
+  //   console.log("Close Button")
+  // }
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -1,6 +1,5 @@
 <div *ngIf="hero" id="select__card" class="select_hero__card">
     <!-- <div class="close-btn" (click)="closeCard()"> X</div> -->
-
     <div class="select_hero__card-item">
         <p class="heading">{{hero.name | uppercase}} Details</p>
         <img src={{hero.imageUrl}} alt="profile-image" class="hero__profile-img">
@@ -13,4 +12,7 @@
         </div>
     </div>
 
+</div>
+<div class="go-back-btn">
+    <button (click)="goBack()">go back</button>
 </div>
